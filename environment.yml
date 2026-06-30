@@ -1,0 +1,23 @@
+name: lss-repro
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - numpy
+  - pillow
+  - matplotlib
+  - tqdm
+  - opencv
+  - pytorch=1.13.1
+  - torchvision=0.14.1
+  - pytorch-cuda=11.7
+  - pip:
+      - efficientnet_pytorch==0.7.0
+      - fire
+      - nuscenes-devkit
+      - tensorboardX
+      - scikit-image
