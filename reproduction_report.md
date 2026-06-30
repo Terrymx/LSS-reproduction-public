@@ -480,11 +480,3 @@ BEV loss + lambda * depth pseudo-label loss
 - `component_shape_hist.png`：展示误差来源从“噪声”转向“形状拉长/粘连”的证据。
 
 在正式报告中，应明确区分两类指标：官方 clean repo 的 checkpoint 对齐结果，以及本次 debug evaluation 下的自训练模型结果。前者用于说明复现环境差异，后者用于比较本项目中的实验改进。
-
-## 14. 简历表述草稿
-
-该复现经历可以整理为：
-
-```text
-复现 NVIDIA Lift-Splat-Shoot 多相机 BEV 感知框架，基于 nuScenes trainval 完成数据部署、远程 RTX 4090 训练、评估与可视化闭环；系统分析 Lift、Splat、geometry projection、voxel pooling 等核心模块，并实现 debug training/evaluation/visualization 脚本用于 tensor shape 追踪和 ablation；通过输入分辨率、depth bin、数据增强和学习率调度实验，将当前环境下 BEV vehicle segmentation IoU@0.5 提升至 0.386；进一步通过 Dice loss、形态学后处理、车辆形状约束和连通域统计定位主要误差来源，确认深度方向拉长与目标粘连是限制 LSS mask 质量的关键因素。
-```
