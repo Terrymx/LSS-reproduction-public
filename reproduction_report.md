@@ -458,25 +458,3 @@ BEV loss + lambda * depth pseudo-label loss
 ```
 
 这个方向正好对应本次实验观察到的纵向拉长问题。需要注意的是，生成式深度模型可能存在尺度不确定和多视角不一致，因此更适合作为 teacher / auxiliary supervision，而不是无校准地直接替换几何投影。
-
-## 13. LaTeX 迁移建议
-
-后续如果将本报告整理为 LaTeX，可以按照论文式结构组织：
-
-```text
-1. Introduction
-2. Method Review
-3. Experimental Setup
-4. Reproduction Results
-5. Ablation Study
-6. Error Analysis
-7. Discussion and Future Work
-```
-
-建议将本文中的表格迁移为 `booktabs` 表格，将三类图片作为核心 figure：
-
-- `bev_gt_vs_pred.png`：展示最终预测效果。
-- `bev_threshold_sweep.png`：展示阈值变化带来的 precision / recall trade-off。
-- `component_shape_hist.png`：展示误差来源从“噪声”转向“形状拉长/粘连”的证据。
-
-在正式报告中，应明确区分两类指标：官方 clean repo 的 checkpoint 对齐结果，以及本次 debug evaluation 下的自训练模型结果。前者用于说明复现环境差异，后者用于比较本项目中的实验改进。

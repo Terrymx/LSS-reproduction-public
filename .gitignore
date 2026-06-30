@@ -140,3 +140,4 @@ outputs/**/*.pt
 
 # Generated experiment outputs stay local. Curated report figures live in report_assets/.
 outputs/
+private_notes/
